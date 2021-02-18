@@ -9,29 +9,19 @@ module.exports = function (app) {
         let text = req.body.text;
         let locale = req.body.locale;
 
-        //let regex = /[\d]{2}[.:][\d]{2}/;
         if (Object.keys(req.body).length < 2) {
             return res.json({ error: "Required field(s) missing" });
-        }
-        if (text == "") {
+        } else if (text == "") {
             return res.json({ error: "No text to translate" });
-        }
-        if (locale == "american-to-british" && text) {
-            /* let translationText = text.replace(":", ".");
-            let translation = `<span class="highlight">${translationText}</span>`;
-            return res.json({
-                text: text,
-                translation: translation,
-            }); */
+        } else if (locale == "american-to-british" && text) {
             return res.json(translator.amToBrit(text));
-        }
-        if (locale == "british-to-american" && text) {
-            let translationText = text.replace(".", ":");
-            let translation = `<span class="highlight">${translationText}</span>`;
-            return res.json({
-                text: text,
-                translation: translation,
-            });
+        } else if (locale == "british-to-american" && text) {
+            return res.json(translator.britToAm(text));
+        } else if (
+            locale !== "american-to-british" ||
+            locale !== "british-to-american"
+        ) {
+            return res.json({ error: "Invalid value for locale field" });
         }
     });
 };
