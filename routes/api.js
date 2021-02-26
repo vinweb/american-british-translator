@@ -13,6 +13,8 @@ module.exports = function (app) {
             return res.json({ error: "Required field(s) missing" });
         } else if (text == "") {
             return res.json({ error: "No text to translate" });
+        } else if (locale == "" && text) {
+            return res.json({ error: "Missing locale field" });
         } else if (locale == "american-to-british" && text) {
             return res.json(translator.amToBrit(text));
         } else if (locale == "british-to-american" && text) {
