@@ -20,8 +20,7 @@ html {
 }
 
 #wrapper {
-    max-width: 1600px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
 }
 
@@ -42,7 +41,7 @@ code {
 }
 
 .form-container {
-    max-width: 95%;
+    max-width: 100%;
 }
 
 textarea {
@@ -129,19 +128,24 @@ footer a:hover {
     color: rgb(190, 190, 190);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 992px) {
+    #wrapper {
+        width: 992px;
+    }
     .container {
         flex-direction: row;
     }
 
     .form-container {
         align-self: flex-end;
+        flex: 1;
     }
 
     #output-container {
         flex-direction: row;
         margin-top: 0;
         margin-left: 20px;
+        flex: 1;
     }
 
     #solution-container {
