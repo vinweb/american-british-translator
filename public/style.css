@@ -1,22 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Kiwi Maru", serif;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+#bg {
+    background: url("dictionary.jpg") center center/cover no-repeat fixed;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    max-width: 1600px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
 code {
-  background: #d0d0d5;
+    background: #d0d0d5;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-container {
-  max-width: 95%;
+    max-width: 95%;
 }
 
 textarea {
-  width: 100%;
+    width: 100%;
+    resize: vertical;
+    margin-bottom: 20px;
 }
 
 #user-stories {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 #output-container,
@@ -24,58 +60,92 @@ textarea {
 #text-input,
 #locale-select,
 input[type="button"] {
-  font-size: 1.1em;
+    font-size: 1.1em;
 }
 
 #output-container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
 }
 
 #solution-container {
-  font-weight: bold;
+    font-weight: bold;
+    color: white;
 }
 
 #solution-container {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 #translated-sentence {
-  margin-top: 10px;
-  font-weight: normal;
+    margin-top: 10px;
+    font-weight: normal;
 }
 
 #error-msg {
-  font-weight: normal;
-  color: red;
+    font-weight: normal;
+    color: red;
 }
 
 .highlight {
-  color: green;
+    color: lightgreen;
 }
 
 #text-input {
-  padding: 10px;
+    padding: 10px;
+}
+
+select {
+    padding: 5px;
+}
+
+input[type="button"] {
+    margin-left: 10px;
+    background-color: #764abc;
+    border: none;
+    cursor: pointer;
+    padding: 5px 20px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="button"]:hover {
+    background-color: #643fa0;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    margin: 40px 0 10px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: lightgray;
+}
+footer a:hover {
+    color: rgb(190, 190, 190);
 }
 
 @media (min-width: 800px) {
-  .container {
-    flex-direction: row;
-  }
+    .container {
+        flex-direction: row;
+    }
 
-  .form-container {
-    align-self: flex-end;
-  }
+    .form-container {
+        align-self: flex-end;
+    }
 
-  #output-container {
-    flex-direction: row;
-    margin-top: 0;
-    margin-left: 20px;
-  }
+    #output-container {
+        flex-direction: row;
+        margin-top: 0;
+        margin-left: 20px;
+    }
 
-  #solution-container {
-    width: 75%;
-    margin-top: 0;
-  }
+    #solution-container {
+        width: 75%;
+        margin-top: 0;
+    }
 }
